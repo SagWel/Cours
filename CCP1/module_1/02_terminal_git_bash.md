@@ -81,9 +81,7 @@ git commit -m "Message clair décrivant la modification"
 ### 5.1 Créer un dépôt distant
 
 - Aller sur GitHub → New repository.
-
 - Donner un nom → MonProjet.
-
 - Copier l’URL du dépôt (HTTPS ou SSH).
 
 ### 5.2 Lier le dépôt local au dépôt GitHub
@@ -140,19 +138,61 @@ git branch -d ma-branche
 
 ❌ `"update"`, `"test"`, `"fix"`
 
+### 7.1 Differentes méthodes de création de dépot
+#### Solution 1 : avec la CLI GitHub (gh)
+
+- Installer la CLI GitHub ([lien ici](https://cli.github.com/))
+- Se connecter à GitHub : 
+```bash
+gh auth login
+```
+- Créer ton dépôt distant depuis le terminal
+	- Dans le dossier projet déjà initialisé avec Git :
+	```bash
+	gh repo create NOM_DU_REPO --public --source=. --push
+	```
+	ou en prive : 
+	```bash
+	gh repo create NOM_DU_REPO --private --source=. --push
+	```
+Ça va automatiquement :
+- créer le dépôt sur GitHub
+- ajouter le remote origin
+- faire le premier git push.
+
+#### Solution 2 : avec l’API GitHub (sans gh)
+
+On peut aussi créer un dépôt avec une simple commande curl :
+```bash
+curl -u "[username]:[TOKEN_GITHUB]" https://api.github.com/user/repos -d '{"name":"[NOM_DU_REPO]"}'
+```
+Puis :
+```bash
+git remote add origin https://github.com/[username]/[NOM_DU_REPO].git
+git push -u origin main
+```
+
+#### Solution 3 : Créer un dépôt distant sur GitHub / GitLab / autre ✅✅✅ (plus simple)
+
+- Créer un dépôt distant sur GitHub
+- Cloner le depot distant : 
+```bash
+git clone [url/du/depot]
+```
+
 ## 8. Exercices pratiques
 
 - Créez un projet HelloGit :
 
-    - Initialisez un dépôt local.
-
-    - Ajoutez un fichier README.md.
-
+    - Initialisez un dépôt distant (sur GitHub).
+    - Récupérez le projet (git clone)
+    - Ajoutez un fichier README.md en local.
     - Faites un commit.
 
-- Créez un dépôt GitHub et poussez votre projet.
-
-- Créez une nouvelle branche develop, ajoutez une modification et fusionnez-la dans main.
+- Créez une nouvelle branche "develop" et utilisez la (git checkout)
+	- Ajoutez une modification 
+	- Faites un commit sur "develop"
+	- Fusionnez-la dans main.
 
 
 # Git & GitHub – Schémas ASCII
