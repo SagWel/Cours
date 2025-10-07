@@ -35,6 +35,17 @@ h2 {
     padding: 1rem 0;
     height: auto;
     gap: 2rem;
+    max-height: 50rem ;
+    overflow: auto
+}
+
+.section-exo::-webkit-scrollbar {
+    background-color: white;
+}
+
+.section-exo::-webkit-scrollbar-thumb {
+    background-color: #FFCECE;
+    border-radius: 10px;
 }
 
 .cours {
