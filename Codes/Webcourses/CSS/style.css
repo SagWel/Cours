@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: lightgreen;
+}
+
+body a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 5rem;
+    background-color: #FFCECE;
+    border-bottom: solid 0.25rem #80FF00;
+    padding: 0 1.25rem 0 1.25rem;
+}
+
+.logo,
+.connexion {
+    border: solid 0.125rem #80FF00;
+    border-radius: 100%;
+    padding: 0.3125rem;
+    background-color: lightgreen;
+}
+
+.centre-page {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: auto;
+    width: 15rem;
+    background-color: #FFCECE;
+    border-right: solid 0.25rem #80FF00;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 1.25rem;
+}
+
+nav ul li {
+    margin-bottom: 0.25rem;
+}
+
+nav a {
+    padding: 1.25rem;
+}
+
+.separateur {
+    border: solid 1px black;
+    width: 100%;
+}
+
+.titre-liste-nav {
+    font-weight: 700;
+}
+
+main {
+    padding: 2rem;
+}
+
+main h2, h5,
+.cours p,
+.exo p {
+    text-align: center;
+}
+
+.resume  {
+    border: groove 0.0625rem white;
+    border-radius: 0.125rem;
+    padding: 1rem 2rem;
+    margin: 0rem 5rem;
+}
+
+.box-cours-recents {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 5rem;
+    border: solid 2px white;
+    border-radius: 0.625rem;
+    place-items: center;
+    padding: 1rem 0;
+    height: 17rem;
+}
+
+.cours {
+    height: 256px;
+    width: 218px;
+    border-radius: 10%;
+    box-shadow: 0 0 1rem 0 black;
+    
+}
+
+.titre-cours, .titre-exo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.box-exos-vendredi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 5rem;
+    border: solid 2px white;
+    border-radius: 0.625rem;
+    place-items: center;
+    padding: 1rem 0;
+    height: 20rem;
+}
+
+.exo {
+    height: 320px;
+    width: 376px;
+    border-radius: 10%;
+    box-shadow: 0 0 1rem 0 black;
+    
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: 5rem;
+    background-color: #FFCECE;
+    border-top: solid 0.25rem #80FF00;
+    padding: 0 1.25rem 0 1.25rem;
+}
