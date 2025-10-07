@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <title>Web Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../CSS/style.css">
+<link rel="stylesheet" href="../CSS/liste-cours.css">
+<title>Web Courses</title>
 </head>
 
     <header>
@@ -15,42 +19,167 @@
     
     <div class="centre-page">
         <nav>
-            <a href=""> Acceuil </a>
-            <a href=""> Liste cours </a>
-            <a href=""> Liste exos </a>
-            <a href=""> Mon espace </a>
+            <a href="../index.html"> Acceuil </a>
+            <a href="./liste-cours.html"> Liste cours </a>
+            <a href="./liste-exos.html"> Liste exos </a>
+            <a href="./espace-perso.html"> Mon espace </a>
             
             <div class="separateur"></div>
             
-            <ul>
+             <ul>
                 <li class="titre-liste-nav">
                     Cours consultés :
                 </li>
                 <li>
-                    <a href="cours/:id"> ... Script JS ...</a>
+                    <a href="./cours1.html"> ... Script JS ...</a>
                 </li>
                 <li>
-                    <a href="cours/:id"> ... Script JS ...</a>
+                    <a href="./cours2.html"> ... Script JS ...</a>
                 </li>
                 <li>
-                    <a href="cours/:id"> ... Script JS ...</a>
+                    <a href="./cours3.html"> ... Script JS ...</a>
                 </li>
                 <li>
-                    <a href="cours/:id"> ... Script JS ...</a>
+                    <a href="./cours4.html"> ... Script JS ...</a>
                 </li>
                 <li>
-                    <a href="cours/:id"> ... Script JS ...</a>
+                    <a href="./cours5.html"> ... Script JS ...</a>
                 </li>
                 <li>
-                    <a href="cours/:id"> ... Script JS ...</a>
+                    <a href="./cours6.html"> ... Script JS ...</a>
                 </li>
             </ul>
         </nav>
         
         <main>
-            <Section>
-                
+            <div>
+                <h2>Liste Des Cours</h2>
+            </div>
+            <Section id="zone-recherche" class="zone-recherche">
+                <form action="#" method="get">
+
+                    <label for="nom-cours">Nom du cours : </label>
+                    <input type="text" name="nom-cours" id="nom-cours">
+                    <button type="submit">Rechercher</button>
+
+                </form>
+                <form action="#" method="get" class="recherche-info">
+
+                    <div>                        
+                        <label for="prof">Ecris par : </label>
+                        <select name="prof" id="prof">
+                            <option value="">--Choisir un professeur--</option>
+                            <option value="Jonathan-Jensen">Jonathan Jensen</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="*techno"> Tecnologies : </label>
+                        <select name="techno" id="techno">
+                            <option value="">--Choisir une technologie--</option>
+                            <option value="css">CSS</option>
+                            <option value="htlm">HTML</option>
+                            <option value="js">JavaScrikpt</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="module">Module : </label>
+                        <select name="module" id="module">
+                            <option value="">--Choisir un module--</option>
+                            <option value="Module-1">Module 1</option>
+                            <option value="Module-2">Module 2</option>
+                            <option value="Module-3">Module 3</option>
+                            <option value="Module-4">Module 4</option>
+                            <option value="Module-5">Module 5</option>
+                            <option value="Module-6">Module 6</option>
+                            <option value="Module-7">Module 7</option>
+                            <option value="Module-8">Module 8</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Valider</button>
+                </form>
             </Section>
+            <section id="secdtion-cours" class="section-cours">
+                <a href="./pages/cours1.html" class="cours">
+                    <div class="titre-cours">
+                        <h3>CCP1</h3>
+                        <h4>Module 1</h4>
+                    </div>
+                    <h5 class="no-margin-top">"Titre cours"</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, facere! In, et alias. 
+                        Repellat inventore magnam asperiores rerum eos magni, porro numquam aut quod molestias provident illum, assumenda aliquid pariatur?
+                    </p>
+                </a>
+
+                <a href="./pages/cours2.html" class="cours">
+                    <div class="titre-cours">
+                        <h3>CCP1</h3>
+                        <h4>Module 1</h4>
+                    </div>
+                    <h5 class="no-margin-top">"Titre cours"</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, facere! In, et alias. 
+                        Repellat inventore magnam asperiores rerum eos magni, porro numquam aut quod molestias provident illum, assumenda aliquid pariatur?
+                    </p>
+                </a>
+
+                <a href="./pages/cours3.html" class="cours">
+                        <div class="titre-cours">
+                            <h3>CCP1</h3>
+                            <h4>Module 1</h4>
+                        </div>
+                        <h5 class="no-margin-top">"Titre cours"</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Illum, facere! In, et alias. 
+                            Repellat inventore magnam asperiores rerum eos magni, porro numquam aut quod molestias provident illum, assumenda aliquid pariatur?
+                        </p>
+                </a>
+                
+                <a href="./pages/cours4.html" class="cours">
+                        <div class="titre-cours">
+                            <h3>CCP1</h3>
+                            <h4>Module 2</h4>
+                        </div>
+                        <h5 class="no-margin-top">"Titre cours"</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Illum, facere! In, et alias. 
+                            Repellat inventore magnam asperiores rerum eos magni, porro numquam aut quod molestias provident illum, assumenda aliquid pariatur?
+                        </p>
+                </a>
+
+                <a href="./pages/cours5.html" class="cours">
+                        <div class="titre-cours">
+                            <h3>CCP1</h3>
+                            <h4>Module 2</h4>
+                        </div>
+                        <h5 class="no-margin-top">"Titre cours"</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Illum, facere! In, et alias. 
+                            Repellat inventore magnam asperiores rerum eos magni, porro numquam aut quod molestias provident illum, assumenda aliquid pariatur?
+                        </p>
+                </a>
+
+                <a href="./pages/cours6.html" class="cours">
+                        <div class="titre-cours">
+                            <h3>CCP1</h3>
+                            <h4>Module 2</h4>
+                        </div>
+                        <h5 class="no-margin-top">"Titre cours"</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Illum, facere! In, et alias. 
+                            Repellat inventore magnam asperiores rerum eos magni, porro numquam aut quod molestias provident illum, assumenda aliquid pariatur?
+                        </p>
+                </a>
+            </section>
         </main>
     </div>
 

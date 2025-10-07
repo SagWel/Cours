@@ -1,0 +1,60 @@
+main h2, h5,
+.cours p,
+.exo p {
+    text-align: center;
+}
+
+.resume  {
+    border: groove 0.0625rem white;
+    border-radius: 0.125rem;
+    padding: 1rem 2rem;
+    margin: 0rem 5rem;
+}
+
+.box-cours-recents {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 5rem;
+    border: solid 2px white;
+    border-radius: 0.625rem;
+    place-items: center;
+    padding: 1rem 0;
+    height: 18rem;
+}
+
+.cours {
+    height: 17rem;
+    width: 17rem;
+    border-radius: 10%;
+    box-shadow: 0 0 1rem 0 black;
+}
+
+.titre-cours, .titre-exo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.box-exos-vendredi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 5rem;
+    border: solid 2px white;
+    border-radius: 0.625rem;
+    place-items: center;
+    padding: 1rem 0;
+    height: 22rem;
+}
+
+.exo {
+    height: 21rem;
+    width: 26rem;
+    border-radius: 10%;
+    box-shadow: 0 0 1rem 0 black;
+    
+}
