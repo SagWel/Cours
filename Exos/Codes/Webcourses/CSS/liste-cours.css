@@ -39,11 +39,11 @@ h2 {
     overflow: auto
 }
 
-.section-exo::-webkit-scrollbar {
+.section-cours::-webkit-scrollbar {
     background-color: white;
 }
 
-.section-exo::-webkit-scrollbar-thumb {
+.section-cours::-webkit-scrollbar-thumb {
     background-color: #FFCECE;
     border-radius: 10px;
 }

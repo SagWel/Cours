@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/connexion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
     <header>
         <a href="../index.html" class="logo"> WC </a>
         <h1>WEB COURSES</h1>
-        <a href="" class="connexion"> JJ </a>
+        <div class="connexion"> JJ </div>
     </header>
     
     <div class="centre-page">
@@ -57,9 +58,30 @@
         </nav>
         
         <main>
-            <Section>
-                
+            <Section class="connexion-id">
+                <h2>Connecter-vous</h2>
+                <div>
+                    <form action="#" method="get">
+
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+
+                        <div>
+                            <label for="password">Mot de passe</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+
+                        <button type="submit">Connexion</button>
+
+                    </form>
+                </div>
             </Section>
+            <section class="souscription">
+                Pas de compte ?
+                <a href="./Souscription.html"> <h3>Creer un compte !</h3> </a>
+            </section>
         </main>
     </div>
 

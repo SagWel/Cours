@@ -25,6 +25,15 @@ main h2, h5,
     overflow:auto
 }
 
+.section-cours::-webkit-scrollbar {
+    background-color: white;
+}
+
+.section-cours::-webkit-scrollbar-thumb {
+    background-color: #FFCECE;
+    border-radius: 10px;
+}
+
 .cours {
     height: 17rem;
     width: 17rem;
@@ -55,6 +64,15 @@ main h2, h5,
     padding: 1rem 0;
     max-height: 22rem;
     overflow: auto
+}
+
+.section-exo::-webkit-scrollbar {
+    background-color: white;
+}
+
+.section-exo::-webkit-scrollbar-thumb {
+    background-color: #FFCECE;
+    border-radius: 10px;
 }
 
 .exo {
