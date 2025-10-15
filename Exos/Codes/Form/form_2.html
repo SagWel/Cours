@@ -1,87 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire Exo 2</title>
-</head>
-<body>
-    
-<!-- Creer un formulaite de modification de profile (method post)
-- nom (max 40 chars, type text) 
-- prenom (max 30 chars, type text)
-- pseudo (min 5 - alphanumerique)
-- email (max 50 chars, type email)
-- mot_de_passe (min 12 chars, max 20 chars, type password)
-- photo de profil (file)
-- civilite (radio : "Mme", "M", "Me", "Dr")
-- accepte (checkbox : "cookies", "CGV", "CGU", "newsletter")
-- presentation (textarea)
-- anniversaire (date)
-- pays (select : "France", "Italie", "Espagne", "Allemagne", "Suisse", "Angleterre", "autres")
-- role (select multiple : "utilisateur", "invite", "redacteur", "admin") -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulaire Exo 2</title>
+    </head>
+    <body>
 
-    <form action="#" method="post">
+        <form action="#" method="post">
 
-        <div>
-            <label for="name"> Entrez votre nom </label>
-            <input type="text" name="name" maxlength="40">
-        </div> 
+            <div>
+                <label for="name"> Entrez votre nom </label>
+                <input type="text" name="name" maxlength="40">
+            </div> 
 
-        <br>
+            <br>
 
-        <div>
-            <label for="firstname"> Entrez votre prénom </label>
-            <input type="text" name="firstname" maxlength="30">
-        </div>
+            <div>
+                <label for="firstname"> Entrez votre prénom </label>
+                <input type="text" name="firstname" maxlength="30">
+            </div>
 
-        <br>
+            <br>
 
-        <div>
-            <label for="pseudo"> Entrez votre nouveau pseudo </label>
-            <input type="text" name="pseudo" minlength="5" pattern="[a-zA-Z0-9]+">
-        </div>
+            <div>
+                <label for="pseudo"> Entrez votre nouveau pseudo </label>
+                <input type="text" name="pseudo" minlength="5" pattern="[a-zA-Z0-9]+">
+            </div>
 
-        <br>
-        
-        <div>
-            <label for="email"> Entrez votre nouvel email </label>
-            <input type="email" name="email" maxlength="50">
-        </div>
-
-        <br>
-
-        <div>
-            <label for="password"> Entrez votre nouveau mot de passe </label>
-            <input type="password" name="password" minlength="12" maxlength="20">
-        </div>
-
-        <br>
-
-        <div>
-            <label for="picture"> Joindre nouvelle photo de profil </label>
-            <input type="file" name="picture">
-        </div>
-
-        <br>
-
-        <div>
-             Civilité : 
+            <br>
             
-            <label for="civility-Mme"> Mme </label>
-            <input type="radio" id="civility-Mme" name="civility" value="Mme">
+            <div>
+                <label for="email"> Entrez votre nouvel email </label>
+                <input type="email" name="email" maxlength="50">
+            </div>
 
-            <label for="civility-M"> M </label>
-            <input type="radio" id="civility-M" name="civility" value="M"> 
+            <br>
 
-            <label for="civility-Me"> Me </label>
-            <input type="radio" id="civility-Me" name="civility" value="Me">
+            <div>
+                <label for="password"> Entrez votre nouveau mot de passe </label>
+                <input type="password" name="password" minlength="12" maxlength="20">
+            </div>
 
-            <label for="civility-Dr"> Dr </label>
-            <input type="radio" id="Civility-Dr" name="civility" value="Dr">
-        </div>
+            <br>
 
-    </form>
+            <div>
+                <label for="picture"> Joindre nouvelle photo de profil </label>
+                <input type="file" name="picture">
+            </div>
 
-</body>
+            <br>
+
+            <div>
+                Civilité : 
+                
+                <label for="civility-Mme"> Mme </label>
+                <input type="radio" id="civility-Mme" name="civility" value="Mme">
+
+                <label for="civility-M"> M </label>
+                <input type="radio" id="civility-M" name="civility" value="M"> 
+
+                <label for="civility-Me"> Me </label>
+                <input type="radio" id="civility-Me" name="civility" value="Me">
+
+                <label for="civility-Dr"> Dr </label>
+                <input type="radio" id="Civility-Dr" name="civility" value="Dr">
+            </div>
+
+            <br>
+
+            <div>
+                Veuillez accepter les conditions suivantes :
+
+                <label for="cookies"> Cookies </label>
+                <input type="checkbox" id="cookies" name="cookies">
+
+                <label for="CVG"> CVG </label>
+                <input type="checkbox" id="CVG" name="CVG" required>
+
+                <label for="CGV"> CGV </label>
+                <input type="checkbox" id="CGV" name="CGV" required>
+
+                <label for="newsletter"> Newsletter </label>
+                <input type="checkbox" id="newsletter" name="newsletter" required>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="presentation"> Veuillez inscrire votre nouvelle présentation (max 200 caratères) </label>
+                <textarea id="presentation" name="presentation" rows="4" colummns="40" maxlength="200"></textarea>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="birthday"> Entrez votre date de naissance </label>
+                <input type="date" name="birthday" required>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="pays"> Selectionnez votre pays </label>
+                <select name="pays" id="pays">
+                    <option value="france"> France </option>
+                    <option value="italie"> Italie </option>
+                    <option value="espagne"> Espagne </option>
+                    <option value="allemagne"> Allemagne </option>
+                    <option value="suisse"> Suisse </option>
+                    <option value="angleterre"> Angleterre </option>
+                    <option value="autres"> Autres </option>
+                </select>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="role"> Quel(s) est(sont) votre(vos) role(s) </label>
+                <select multiple name="role" id="role" required>
+                    <option value="utilisateur"> Utilisateur </option>
+                    <option value="invite"> Invité </option>
+                    <option value="redacteur"> Rédacteur </option>
+                    <option value="admin"> Administrateur </option>
+                </select>
+            </div>
+
+            <br>
+
+            <button type="submit"> Validez vos modifications </button>
+        </form>
+        
+    </body>
 </html>
