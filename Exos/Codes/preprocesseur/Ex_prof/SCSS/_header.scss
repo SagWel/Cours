@@ -1,0 +1,30 @@
+// Déclaration
+$primary-color: #1abc9c;
+$font-stack: 'Open Sans', sans-serif;
+
+// Utilisation
+body {
+  font-family: $font-stack;
+  background-color: $primary-color;
+}
+
+nav {
+  background: lightblue;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          color: yellow;
+        }
+      }
+    }
+  }
+}

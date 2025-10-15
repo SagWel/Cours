@@ -1,0 +1,28 @@
+@use 'header' as *;
+
+@mixin bouton($couleur, $radius: 5px) {
+    background: $couleur;
+    border-radius: $radius;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+button {
+    @include bouton(#e74c3c, 10px);
+}
+
+a.button {
+    @include bouton(#3498db);
+}
+
+.content {
+    table {
+        thead {
+            background: green;
+        }
+        tbody {
+            background-color: blue;
+        }
+    }
+}
