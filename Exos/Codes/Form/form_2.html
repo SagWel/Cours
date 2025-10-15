@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Exo 2</title>
+</head>
+<body>
+    
+<!-- Creer un formulaite de modification de profile (method post)
+- nom (max 40 chars, type text) 
+- prenom (max 30 chars, type text)
+- pseudo (min 5 - alphanumerique)
+- email (max 50 chars, type email)
+- mot_de_passe (min 12 chars, max 20 chars, type password)
+- photo de profil (file)
+- civilite (radio : "Mme", "M", "Me", "Dr")
+- accepte (checkbox : "cookies", "CGV", "CGU", "newsletter")
+- presentation (textarea)
+- anniversaire (date)
+- pays (select : "France", "Italie", "Espagne", "Allemagne", "Suisse", "Angleterre", "autres")
+- role (select multiple : "utilisateur", "invite", "redacteur", "admin") -->
+
+    <form action="#" method="post">
+
+        <div>
+            <label for="name"> Entrez votre nom </label>
+            <input type="text" name="name" maxlength="40">
+        </div> 
+
+        <br>
+
+        <div>
+            <label for="firstname"> Entrez votre prénom </label>
+            <input type="text" name="firstname" maxlength="30">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="pseudo"> Entrez votre nouveau pseudo </label>
+            <input type="text" name="pseudo" minlength="5" pattern="[a-zA-Z0-9]+">
+        </div>
+
+        <br>
+        
+        <div>
+            <label for="email"> Entrez votre nouvel email </label>
+            <input type="email" name="email" maxlength="50">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="password"> Entrez votre nouveau mot de passe </label>
+            <input type="password" name="password" minlength="12" maxlength="20">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="picture"> Joindre nouvelle photo de profil </label>
+            <input type="file" name="picture">
+        </div>
+
+        <br>
+
+        <div>
+             Civilité : 
+            
+            <label for="civility-Mme"> Mme </label>
+            <input type="radio" id="civility-Mme" name="civility" value="Mme">
+
+            <label for="civility-M"> M </label>
+            <input type="radio" id="civility-M" name="civility" value="M"> 
+
+            <label for="civility-Me"> Me </label>
+            <input type="radio" id="civility-Me" name="civility" value="Me">
+
+            <label for="civility-Dr"> Dr </label>
+            <input type="radio" id="Civility-Dr" name="civility" value="Dr">
+        </div>
+
+    </form>
+
+</body>
+</html>

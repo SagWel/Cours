@@ -8,7 +8,7 @@ function noms () {
 
 
 function choix () {
-    let choix = prompt('Que voulez vous faire ? Additioner (jusqu\'au nombre choisi), Comparer, Multiplications (tables jusqu\'à 10) ou Jouez à "Paire ou Impaire" ?');
+    let choix = prompt('Que voulez vous faire ? Additioner (jusqu\'au nombre choisi), Comparer, Multiplications (tables jusqu\'à 10) ou Jouez à "Pair ou Impair" ?');
     
     switch (choix) {
         case "Additioner":
@@ -57,14 +57,14 @@ function comparateur () {
 };
 
 
-function pair_impaire () {
+function pair_impair () {
     let nombre = prompt("Entrez un nombre");
 
     if (nombre % 2  === 0) {
-        alert("Ce nombre est paire");
+        alert("Ce nombre est pair");
     }
     else {
-        alert("Ce nombre est impaire");
+        alert("Ce nombre est impair");
     };
 };
 

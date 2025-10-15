@@ -1,0 +1,48 @@
+// Déclaration
+$primary-color: #1abc9c;
+$font-stack: 'Open Sans', sans-serif;
+
+// Utilisation
+body {
+  font-family: $font-stack;
+  background-color: $primary-color;
+}
+
+nav {
+  background: #333;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          color: yellow;
+        }
+      }
+    }
+  }
+}
+
+
+
+@mixin bouton($couleur, $radius: 5px) {
+  background: $couleur;
+  border-radius: $radius;
+  padding: 10px 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+button {
+  @include bouton(#01ef01, 10px);
+}
+
+a.button {
+  @include bouton(#3498db);
+}
