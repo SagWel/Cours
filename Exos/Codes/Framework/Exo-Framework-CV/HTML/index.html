@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../Styles/styles.css">
         <title>Mon CV</title>
     </head>
-    <body data-bs-theme="dark">
+    <body data-bs-theme="dark" class="d-flex flex-column" >
 
         <!-- un header (liens : accueil,  presentation personnelle, historique des TP, divers)
     un menu dynamique (show/hide) avec les liens : langages, technologies, competences pro, softskills
@@ -19,8 +19,8 @@
             <a href="tp.html" class="link-opacity-25-hover">Historique des TP</a>
             <a href="divers.html" class="link-opacity-25-hover">Divers</a>
         </header>
-        <main class="container-fluid p-0 m-0">
-            <div class="d-inline-flex height">
+        <main class="container-fluid p-0 m-0 position-relative overflowy-scroll">
+            <div class="d-inline-flex position-absolute">
                 <nav id="nav" class="offcanvas offcanvas-start d-flex flex-column align-items-center justify-content-center gap-5 border-end border-primary-subtle">
                     <a href="languages.html" class="link-underline-primary m-4">Languages</a>
                     <a href="technologies.html" class="link-underline-succes m-4">Technologie</a>
@@ -31,11 +31,19 @@
                     <p>m</p> <p>e</p> <p>n</p> <p>u</p> 
                 </button>
             </div>
-            <div class="container">
-                <img src="" alt="">
+            <div class="d-inline-flex justify-content-center align-items-center intro">    
+                <img src="../SRC/profil.png" alt="mon profil" class="img-fluid img-size mt-4">
+                <div class="p-5 intro-text d-flex flex-column justify-content-center align-items-center">
+                    <h1> Mon CV En Ligne </h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam a porro eum exercitationem ut ea, eius, assumenda voluptate voluptatibus magni excepturi explicabo velit repudiandae molestiae officiis accusantium provident quae illum.
+                        <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos necessitatibus et tempora velit eaque cumque nam omnis ullam doloribus quam rerum explicabo, corrupti sed nihil illum? Consectetur ratione delectus explicabo?
+                    </p>
+                </div>
             </div>
         </main>
-        <footer class="container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
+        <footer class="position-fixed bottom-0 container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
             <p>
                 My email : Lorem-ipsum@dolor-sit.com
             </p>
