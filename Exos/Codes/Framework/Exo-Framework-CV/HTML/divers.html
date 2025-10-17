@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="../Styles/styles.css">
+        <title>Mon CV</title>
+    </head>
+    <body data-bs-theme="dark">
+
+        <!-- un header (liens : accueil,  presentation personnelle, historique des TP, divers)
+    un menu dynamique (show/hide) avec les liens : langages, technologies, competences pro, softskills
+    un footer avec des coordonnees (mail, tel) -->
+
+        <header class="container-fluid d-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle" --bs-bg>
+            <a href="index.html" class="link-opacity-25-hover">Acceuil</a>
+            <a href="presentation.html" class="link-opacity-25-hover">Presentation</a>
+            <a href="tp.html" class="link-opacity-25-hover">Historique des TP</a>
+            <p class="not-link verti-adjust">Divers</p>
+        </header>
+        <main class="container-fluid p-0 m-0">
+            <div class="d-inline-flex height">
+                <nav id="nav" class="offcanvas offcanvas-start d-flex flex-column align-items-center justify-content-center gap-5 border-end border-primary-subtle">
+                    <a href="languages.html" class="link-underline-primary m-4">Languages</a>
+                    <a href="technologies.html" class="link-underline-succes m-4">Technologie</a>
+                    <a href="compétences.html" class="link-underline-warning m-4">Compétences Pro</a>
+                    <a href="softskills.html" class="link-underline-info m-4">Softskills</a>
+                </nav>
+                <button type="button" class="btn btn-primary border-primary-subtle" data-bs-toggle="offcanvas" data-bs-target="#nav">
+                    <p>m</p> <p>e</p> <p>n</p> <p>u</p> 
+                </button>
+            </div>
+            <div class="container">
+                
+            </div>
+        </main>
+        <footer class="container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
+            <p>
+                My email : Lorem-ipsum@dolor-sit.com
+            </p>
+            <p>
+                My tel : 01.02.03.04.05
+            </p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>
