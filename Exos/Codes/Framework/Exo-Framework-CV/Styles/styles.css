@@ -6,7 +6,6 @@ body, html {
 header {
     min-height: 5rem;
     background-color: rgb(0, 0, 44);
-    z-index: 1;
 }
 
 header a {
@@ -22,7 +21,6 @@ header a {
 }
 
 main{
-    z-index: 0;
     min-height: 100vh;
 }
 
@@ -59,9 +57,18 @@ nav {
     min-height: 50%;
 }
 
+.divers {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-shadow {
+    text-shadow: 0.25rem 0.25rem rgb(0, 0, 44);
+}
+
 footer {
     min-height: 5rem;
     background-color: rgb(0, 0, 44);
     color: #6ea8fe;
-    z-index: 1;
 }

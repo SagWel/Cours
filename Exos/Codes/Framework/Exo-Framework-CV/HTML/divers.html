@@ -13,7 +13,7 @@
     un menu dynamique (show/hide) avec les liens : langages, technologies, competences pro, softskills
     un footer avec des coordonnees (mail, tel) -->
 
-        <header class="fixed-top container-fluid d-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle" --bs-bg>
+        <header class="fixed-top container-fluid d-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle z-1" --bs-bg>
             <a href="index.html" class="link-opacity-25-hover">Acceuil</a>
             <a href="presentation.html" class="link-opacity-25-hover">Presentation</a>
             <a href="tp.html" class="link-opacity-25-hover">Historique des TP</a>
@@ -27,15 +27,34 @@
                     <a href="compétences.html" class="link-underline-warning m-4">Compétences Pro</a>
                     <a href="softskills.html" class="link-underline-info m-4">Softskills</a>
                 </nav>
-                <button type="button" class="fixed-top btn btn-primary p-0 btn-other border-primary-subtle" data-bs-toggle="offcanvas" data-bs-target="#nav">
+                <button type="button" class="fixed-top btn btn-primary p-0 btn-other border-primary-subtle z-0" data-bs-toggle="offcanvas" data-bs-target="#nav">
                     <p>m</p> <p>e</p> <p>n</p> <p>u</p> 
                 </button>
             </div>
-            <div class="container">
-                
+            <div class="container-fluid bg-info-subtle position-absolute z-3 h-75 w-75 rounded-5 border border-3 border-success p-3 d-flex flex-column gap-3 divers">
+                <div>
+                    <h3>lorem ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    Ullam nobis molestiae reiciendis, laboriosam sapiente fugiat!</p>
+                </div>
+                <div>
+                    <h3>lorem ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    Exercitationem consectetur commodi eveniet amet ut cupiditate ducimus maxime officia autem aperiam quibusdam ullam, est eum voluptas consequatur iusto laborum incidunt repellat!</p>
+                </div>
+                <div>
+                    <h3>lorem ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> 
+                    Vero laudantium impedit dolor minus tempora similique commodi maxime tenetur, nisi quibusdam enim perspiciatis facere consectetur ipsum blanditiis qui obcaecati velit asperiores.
+                    </p>
+                </div>
+                <div>
+                    <h3>lorem ipsum</h3>
+                    <p>Minus, laboriosam ipsam sunt molestias impedit inventore iure fugiat dolorum illo vitae minima.</p>
+                </div>
             </div>
         </main>
-        <footer class="fixed-bottom container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
+        <footer class="fixed-bottom container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle z-1">
             <p>
                 My email : Lorem-ipsum@dolor-sit.com
             </p>
