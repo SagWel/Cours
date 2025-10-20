@@ -13,14 +13,14 @@
     un menu dynamique (show/hide) avec les liens : langages, technologies, competences pro, softskills
     un footer avec des coordonnees (mail, tel) -->
 
-        <header class="container-fluid d-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle" --bs-bg>
+        <header class="fixed-top container-fluid d-inline-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle">
             <a href="index.html" class="link-opacity-25-hover">Acceuil</a>
             <p class="not-link verti-adjust">Presentation</p>
             <a href="tp.html" class="link-opacity-25-hover">Historique des TP</a>
             <a href="divers.html" class="link-opacity-25-hover">Divers</a>
         </header>
-        <main class="container-fluid p-0 m-0">
-            <div class="d-inline-flex height">
+        <main class="container-fluid p-0 m-0 position-relative overflowy-scroll d-flex">
+            <div class="btn-container">
                 <nav id="nav" class="offcanvas offcanvas-start d-flex flex-column align-items-center justify-content-center gap-5 border-end border-primary-subtle">
                     <a href="languages.html" class="link-underline-primary m-4">Languages</a>
                     <a href="technologies.html" class="link-underline-succes m-4">Technologie</a>
@@ -31,15 +31,22 @@
                     <p>m</p> <p>e</p> <p>n</p> <p>u</p> 
                 </button>
             </div>
-            <div class="container">
-                
+            <div class="center-main">  
+                <div>
+                    <img src="../SRC/profil.png" alt="mon profil" class="img-fluid img-size-min">
+                    <div>
+                        <h3>Nom</h3>
+                        <h4>Prenom</h4>
+                        <p>Âge</p>
+                    </div>
+                </div>  
             </div>
         </main>
-        <footer class="container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
-            <p>
+        <footer class="fixed-bottom container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
+            <p class="m-0">
                 My email : Lorem-ipsum@dolor-sit.com
             </p>
-            <p>
+            <p class="m-0">
                 My tel : 01.02.03.04.05
             </p>
         </footer>

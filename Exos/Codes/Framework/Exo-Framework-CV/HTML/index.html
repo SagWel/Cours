@@ -13,26 +13,26 @@
     un menu dynamique (show/hide) avec les liens : langages, technologies, competences pro, softskills
     un footer avec des coordonnees (mail, tel) -->
 
-        <header class="container-fluid d-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle" --bs-bg>
+        <header class="fixed-top d-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle" --bs-bg>
             <p class="not-link verti-adjust">Acceuil</p>
             <a href="presentation.html" class="link-opacity-25-hover">Presentation</a>
             <a href="tp.html" class="link-opacity-25-hover">Historique des TP</a>
             <a href="divers.html" class="link-opacity-25-hover">Divers</a>
         </header>
-        <main class="container-fluid p-0 m-0 position-relative overflowy-scroll">
-            <div class="d-inline-flex position-absolute">
+        <main class="container-fluid p-0 m-0 position-relative overflowy-scroll d-flex">
+            <div>
                 <nav id="nav" class="offcanvas offcanvas-start d-flex flex-column align-items-center justify-content-center gap-5 border-end border-primary-subtle">
                     <a href="languages.html" class="link-underline-primary m-4">Languages</a>
                     <a href="technologies.html" class="link-underline-succes m-4">Technologie</a>
                     <a href="compétences.html" class="link-underline-warning m-4">Compétences Pro</a>
                     <a href="softskills.html" class="link-underline-info m-4">Softskills</a>
                 </nav>
-                <button type="button" class="btn btn-primary border-primary-subtle" data-bs-toggle="offcanvas" data-bs-target="#nav">
+                <button type="button" class="fixed-start btn btn-primary btn-other border-primary-subtle" data-bs-toggle="offcanvas" data-bs-target="#nav">
                     <p>m</p> <p>e</p> <p>n</p> <p>u</p> 
                 </button>
             </div>
-            <div class="d-inline-flex justify-content-center align-items-center intro">    
-                <img src="../SRC/profil.png" alt="mon profil" class="img-fluid img-size mt-4 ms-5">
+            <div class="">    
+                <img src="../SRC/profil.png" alt="mon profil" class="img-fluid img-size-max">
                 <div class="p-5 intro-text d-flex flex-column justify-content-center align-items-center">
                     <h1> Mon CV En Ligne </h1>
                     <p>
@@ -44,10 +44,10 @@
             </div>
         </main>
         <footer class="position-fixed bottom-0 container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
-            <p>
+            <p class="m-0">
                 My email : Lorem-ipsum@dolor-sit.com
             </p>
-            <p>
+            <p class="m-0">
                 My tel : 01.02.03.04.05
             </p>
         </footer>
