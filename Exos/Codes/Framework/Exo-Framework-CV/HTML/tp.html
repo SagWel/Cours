@@ -13,29 +13,94 @@
     un menu dynamique (show/hide) avec les liens : langages, technologies, competences pro, softskills
     un footer avec des coordonnees (mail, tel) -->
 
-        <header class="container-fluid d-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle" --bs-bg>
+        <header class="container-fluid fixed-top d-flex justify-content-center align-items-center gap-5 border-bottom border-primary-subtle" --bs-bg>
             <a href="index.html" class="link-opacity-25-hover">Acceuil</a>
             <a href="presentation.html" class="link-opacity-25-hover">Presentation</a>
             <p class="not-link verti-adjust">Historique des TP</p>
             <a href="divers.html" class="link-opacity-25-hover">Divers</a>
         </header>
-        <main class="container-fluid p-0 m-0">
-            <div class="d-inline-flex height">
+        <main class="container-fluid position-relative overflowy-scroll">
+            <div>
                 <nav id="nav" class="offcanvas offcanvas-start d-flex flex-column align-items-center justify-content-center gap-5 border-end border-primary-subtle">
                     <a href="languages.html" class="link-underline-primary m-4">Languages</a>
                     <a href="technologies.html" class="link-underline-succes m-4">Technologie</a>
                     <a href="compétences.html" class="link-underline-warning m-4">Compétences Pro</a>
                     <a href="softskills.html" class="link-underline-info m-4">Softskills</a>
                 </nav>
-                <button type="button" class="btn btn-primary border-primary-subtle" data-bs-toggle="offcanvas" data-bs-target="#nav">
+                <button type="button" class="fixed-top btn btn-primary p-0 btn-other border-primary-subtle" data-bs-toggle="offcanvas" data-bs-target="#nav">
                     <p>m</p> <p>e</p> <p>n</p> <p>u</p> 
                 </button>
             </div>
-            <div class="container">
-                
+            <div class="container-fluid my-5 py-5 text-center">
+                <div class="row mb-5 mx-5">
+
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200/300" class="card-img-top max-img mh-" alt="ramdom image">
+                            <div class="card-body">
+                                <h5 class="card-title">lorem ipsum</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod accusamus ducimus iure aliquam incidunt eos, hic tenetur ipsa. In placeat numquam eius perferendis aliquam, doloremque facere earum impedit tenetur!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200/300" class="card-img-top max-img" alt="ramdom image">
+                            <div class="card-body">
+                                <h5 class="card-title">lorem ipsum</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod accusamus ducimus iure aliquam incidunt eos, hic tenetur ipsa. In placeat numquam eius perferendis aliquam, doloremque facere earum impedit tenetur!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200/300" class="card-img-top max-img mh-" alt="ramdom image">
+                            <div class="card-body">
+                                <h5 class="card-title">lorem ipsum</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod accusamus ducimus iure aliquam incidunt eos, hic tenetur ipsa. In placeat numquam eius perferendis aliquam, doloremque facere earum impedit tenetur!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mb-5 mx-5">
+
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200/300" class="card-img-top max-img mh-" alt="ramdom image">
+                            <div class="card-body">
+                                <h5 class="card-title">lorem ipsum</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod accusamus ducimus iure aliquam incidunt eos, hic tenetur ipsa. In placeat numquam eius perferendis aliquam, doloremque facere earum impedit tenetur!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200/300" class="card-img-top max-img mh-" alt="ramdom image">
+                            <div class="card-body">
+                                <h5 class="card-title">lorem ipsum</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod accusamus ducimus iure aliquam incidunt eos, hic tenetur ipsa. In placeat numquam eius perferendis aliquam, doloremque facere earum impedit tenetur!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://picsum.photos/200/300" class="card-img-top max-img mh-" alt="ramdom image">
+                            <div class="card-body">
+                                <h5 class="card-title">lorem ipsum</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quod accusamus ducimus iure aliquam incidunt eos, hic tenetur ipsa. In placeat numquam eius perferendis aliquam, doloremque facere earum impedit tenetur!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </main>
-        <footer class="container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
+        <footer class="fixed-bottom container-fluid d-inline-flex justify-content-around align-items-center border-top border-primary-subtle">
             <p>
                 My email : Lorem-ipsum@dolor-sit.com
             </p>
