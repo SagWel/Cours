@@ -2,10 +2,21 @@ function bjr() {
     alert("Bonjour !")
 }
 
+// -------------------------------------------------------------------------------------------------------------------------------------
+// INFOS
+// -------------------------------------------------------------------------------------------------------------------------------------
+confirm("Les exercices 10 et 11 font partie intègrantes des autres exercices et c'est pour cela qu'il n'ont pas leur propre boutton")
+
+// -------------------------------------------------------------------------------------------------------------------------------------
+// VARIABLES
+// -------------------------------------------------------------------------------------------------------------------------------------
 let prenom = prompt("Quel est votre prénom ? ");
 let registeredList = ["Aria", "Robin", "Julie"]
 let listFruit = ["Pomme", "Poire", "Raisin"]
 
+// -------------------------------------------------------------------------------------------------------------------------------------
+// FONCTIONS
+// -------------------------------------------------------------------------------------------------------------------------------------
 function saluer (prenom) {
     alert(`Bonjour ${prenom}`)
 }
@@ -215,6 +226,30 @@ function registre () {
     }
 }
 
+function multiplication () {
+    let nombre = prompt("De quel nombre voulez-vous la table de multiplication ?")
+    let result =[]
+
+    for (let i = 1; i <= 10; i++) {
+        result.push(`${nombre} x ${i} = ${Number(nombre) * i}`)
+    }
+
+    alert(`Voici la table de multiplication de ${nombre} :
+        ${result[0]}.
+        ${result[1]}.
+        ${result[2]}.
+        ${result[3]}.
+        ${result[4]}.
+        ${result[5]}.
+        ${result[6]}.
+        ${result[7]}.
+        ${result[8]}.
+        ${result[9]}.`)
+}
+
+// -------------------------------------------------------------------------------------------------------------------------------------
+// LIENS BOUTTON/FONCTION
+// -------------------------------------------------------------------------------------------------------------------------------------
 const bouton1 = document.getElementById("exo1");
 const bouton2 = document.getElementById("exo2");
 const bouton3 = document.getElementById("exo3");
@@ -274,5 +309,5 @@ if(bouton13) {
 }
 
 if(bouton14) {
-    bouton14.addEventListener("click",)
+    bouton14.addEventListener("click",multiplication)
 }
