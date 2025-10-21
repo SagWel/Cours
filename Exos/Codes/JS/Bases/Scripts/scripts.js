@@ -1,4 +1,9 @@
+function bjr() {
+    alert("Bonjour !")
+}
+
 function identite () {
+    bjr()
     let prenom = prompt("Quel est votre nom ? ");
     let age = prompt("Quel âge avez vous ? ");
     let ville = prompt("Dons quelle ville habitez vous ? ");
@@ -7,6 +12,7 @@ alert(`Bonjour ${prenom}, vous avez ${age} ans et vous habitez à ${ville}`)
 };
 
 function calcul () {
+    bjr()
 let first = Number(prompt("Choisir un premier nombre"));
 let second = Number(prompt("choisir un deuxième nombre"));
 
@@ -25,6 +31,7 @@ alert(`
 };
 
 function comparaison () {
+    bjr()
     let first = prompt("choisir un premier nombre");
     let second = prompt("Choisir un deuxième nombre");
 
@@ -42,6 +49,7 @@ function comparaison () {
 };
 
 function classeAge() {
+    bjr()
     let age = Number(prompt("Quel âge avez vous ?"));
 
     if (age >= 18) {
@@ -54,10 +62,113 @@ function classeAge() {
 };
 
 function chaudFroid () {
+    bjr()
     let temperature = (Number(prompt("Quelle est la température ?")) >= 25 ? "Il fais chaud !" : "Il fais froid !")
     
     alert(temperature)
 };
+
+function pair () {
+    bjr()
+    let max = Number(prompt("Choisir un nombre max"))
+    let pair = []
+
+
+    for (let i = 0; i <= max; i ++ ) {
+        if (i % 2 === 0) {
+            pair.push(i)
+        }
+    }
+
+    alert(`les nombre pairs jusqu'à ${max} sont : ${pair}`)
+}
+
+function comptage () {
+    bjr()
+    let max = Number(prompt("Choisir un nombre max"))
+    let compteur = 0
+    let result = []
+
+    while (compteur <= max) {
+        result.push(compteur)
+        compteur ++
+    }
+
+    alert(`les nombre jusqu'à ${max} sont : ${result}`)
+}
+
+function listFruitsCourses () {
+    bjr()
+    let list = ["Pomme", "Poire", "Raisin"]
+
+    let choix = prompt(`Que voulez vous faire ?
+        Afficher la liste (Afficher) ?
+        Savoir combien de fruits il y a dans la liste (Combien) ?
+        Ajouter un fruit (Ajouter) ?
+        Supprimer le premier fruit de la liste (Supprimer) ?`)
+
+    switch (choix) {
+        case "Ajouter":
+            let fruitAjout = prompt("Quel fruit voulez vous ajouter ?")
+            alert(`la liste contient désormais : ${fruitAjout}`)
+            list.puch(fruitAjout)
+            break;
+        case "Supprimer":
+            let fruitSupprime = list[0]
+            alert(`Vous venez de supprimer ${fruitSupprime} de la liste`)
+            list.shift()
+            break;
+        case "Afficher":
+            alert("La liste cxontient : ")
+            for (let fruit of list) {
+                alert(fruit)
+            }
+            break;
+        case "Combien":
+            alert(`La liste contient ${list.length} fruits`)
+            break;
+        default:
+        alert("Je n'ai pas compris votre choix ...")
+    }
+}
+
+function listNombre () {
+    bjr()
+    let nombres = prompt("Quels nombres voulez vous mettre dans liste (séparés par des virgules) ?");
+    let list = nombres.split(",").map(Number);
+    console.log(list)
+
+    let choix = prompt(`Que voulez vous faire avec ces nombres ?
+        Supprimer premier et dernier élément (Supprimer) ?
+        Rechercher un nombre dans la liste (Recherche) ?
+        Savoir ou se trouve un nombre dans la tableau (Index) ?
+        Trier le tableau (Tri) ?`);
+
+    switch (choix) {
+        case "Supprimer":
+            let nombresSuprime =[list[0], list[list.length - 1]];
+            list.pop();
+            list.shift();
+            alert(`Vous venez de supprimer les nombre ${nombresSuprime}`)
+            break;
+        case "Rechercher":
+            let recherche = prompt("Quel nombre recherchez vous ?")
+            if (list.includes(Number(recherche)) === true) {
+                alert(`Le nombre ${recherche} est bien dans la liste`)
+            } else {
+                alert(`Le nombre ${recherche} n'est pas dans la liste`)
+            }
+            break;
+        case "Index":
+            let index = prompt("De quel nombre chercher vous l'index dans la liste ?")
+            alert(`Le nombre ${index} se trouve à l'index ${list.indexOf(Number(index))} dans le tableau`)
+            break;
+        case "Tri":
+            alert(`Voila la liste une fois triée :
+                ${list.sort()}`)
+    }
+}
+
 
 const bouton1 = document.getElementById("exo1");
 const bouton2 = document.getElementById("exo2");
@@ -88,4 +199,20 @@ if(bouton4) {
 
 if(bouton5) {
     bouton5.addEventListener("click",chaudFroid)
+};
+
+if(bouton6) {
+    bouton6.addEventListener("click",pair)
+};
+
+if(bouton7) {
+    bouton7.addEventListener("click",comptage)
+};
+
+if(bouton8) {
+    bouton8.addEventListener("click",listFruitsCourses)
+};
+
+if(bouton9) {
+    bouton9.addEventListener("click",listNombre)
 };
