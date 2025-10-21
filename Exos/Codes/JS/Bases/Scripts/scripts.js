@@ -89,7 +89,7 @@ function classeAge() {
     saluer(prenom)
     let age = Number(prompt("Quel âge avez vous ?"));
 
-    if (age >= 18) {
+    if (age < 18) {
         alert("Vous êtes mineur !");
     } else if (18 < age < 64) {
         alert("Vous êtes un adulte !");
