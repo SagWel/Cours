@@ -51,8 +51,7 @@ button,
 }
 
 .btn:hover {
-    left: 70rem;
-    top: 5rem;
+    transform: translate(370px, -220px);
 }
 
 button:hover {
