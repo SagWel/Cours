@@ -2,9 +2,16 @@ function bjr() {
     alert("Bonjour !")
 }
 
+let prenom = prompt("Quel est votre prénom ? ");
+let registeredList = ["Aria", "Robin", "Julie"]
+let listFruit = ["Pomme", "Poire", "Raisin"]
+
+function saluer (prenom) {
+    alert(`Bonjour ${prenom}`)
+}
+
 function identite () {
-    bjr()
-    let prenom = prompt("Quel est votre nom ? ");
+    saluer(prenom)
     let age = prompt("Quel âge avez vous ? ");
     let ville = prompt("Dons quelle ville habitez vous ? ");
 
@@ -12,7 +19,7 @@ alert(`Bonjour ${prenom}, vous avez ${age} ans et vous habitez à ${ville}`)
 };
 
 function calcul () {
-    bjr()
+    saluer(prenom)
 let first = Number(prompt("Choisir un premier nombre"));
 let second = Number(prompt("choisir un deuxième nombre"));
 
@@ -31,7 +38,7 @@ alert(`
 };
 
 function comparaison () {
-    bjr()
+    saluer(prenom)
     let first = prompt("choisir un premier nombre");
     let second = prompt("Choisir un deuxième nombre");
 
@@ -49,7 +56,7 @@ function comparaison () {
 };
 
 function classeAge() {
-    bjr()
+    saluer(prenom)
     let age = Number(prompt("Quel âge avez vous ?"));
 
     if (age >= 18) {
@@ -62,14 +69,14 @@ function classeAge() {
 };
 
 function chaudFroid () {
-    bjr()
+    saluer(prenom)
     let temperature = (Number(prompt("Quelle est la température ?")) >= 25 ? "Il fais chaud !" : "Il fais froid !")
     
     alert(temperature)
 };
 
 function pair () {
-    bjr()
+    saluer(prenom)
     let max = Number(prompt("Choisir un nombre max"))
     let pair = []
 
@@ -84,7 +91,7 @@ function pair () {
 }
 
 function comptage () {
-    bjr()
+    saluer(prenom)
     let max = Number(prompt("Choisir un nombre max"))
     let compteur = 0
     let result = []
@@ -98,8 +105,7 @@ function comptage () {
 }
 
 function listFruitsCourses () {
-    bjr()
-    let list = ["Pomme", "Poire", "Raisin"]
+    saluer(prenom)
 
     let choix = prompt(`Que voulez vous faire ?
         Afficher la liste (Afficher) ?
@@ -111,21 +117,21 @@ function listFruitsCourses () {
         case "Ajouter":
             let fruitAjout = prompt("Quel fruit voulez vous ajouter ?")
             alert(`la liste contient désormais : ${fruitAjout}`)
-            list.puch(fruitAjout)
+            listFruit.puch(fruitAjout)
             break;
         case "Supprimer":
-            let fruitSupprime = list[0]
+            let fruitSupprime = listFruit[0]
             alert(`Vous venez de supprimer ${fruitSupprime} de la liste`)
-            list.shift()
+            listFruit.shift()
             break;
         case "Afficher":
-            alert("La liste cxontient : ")
-            for (let fruit of list) {
+            alert("La liste contient : ")
+            for (let fruit of listFruit) {
                 alert(fruit)
             }
             break;
         case "Combien":
-            alert(`La liste contient ${list.length} fruits`)
+            alert(`La liste contient ${listFruit.length} fruits`)
             break;
         default:
         alert("Je n'ai pas compris votre choix ...")
@@ -133,10 +139,10 @@ function listFruitsCourses () {
 }
 
 function listNombre () {
-    bjr()
+    saluer(prenom)
     let nombres = prompt("Quels nombres voulez vous mettre dans liste (séparés par des virgules) ?");
-    let list = nombres.split(",").map(Number);
-    console.log(list)
+    let listNombre = nombres.split(",").map(Number);
+    console.log(listNombre)
 
     let choix = prompt(`Que voulez vous faire avec ces nombres ?
         Supprimer premier et dernier élément (Supprimer) ?
@@ -146,14 +152,14 @@ function listNombre () {
 
     switch (choix) {
         case "Supprimer":
-            let nombresSuprime =[list[0], list[list.length - 1]];
-            list.pop();
-            list.shift();
+            let nombresSuprime =[listNombre[0], listNombre[listNombre.length - 1]];
+            listNombre.pop();
+            listNombre.shift();
             alert(`Vous venez de supprimer les nombre ${nombresSuprime}`)
             break;
         case "Rechercher":
             let recherche = prompt("Quel nombre recherchez vous ?")
-            if (list.includes(Number(recherche)) === true) {
+            if (listNombre.includes(Number(recherche)) === true) {
                 alert(`Le nombre ${recherche} est bien dans la liste`)
             } else {
                 alert(`Le nombre ${recherche} n'est pas dans la liste`)
@@ -161,14 +167,53 @@ function listNombre () {
             break;
         case "Index":
             let index = prompt("De quel nombre chercher vous l'index dans la liste ?")
-            alert(`Le nombre ${index} se trouve à l'index ${list.indexOf(Number(index))} dans le tableau`)
+            alert(`Le nombre ${index} se trouve à l'index ${listNombre.indexOf(Number(index))} dans le tableau`)
             break;
         case "Tri":
             alert(`Voila la liste une fois triée :
-                ${list.sort()}`)
+                ${listNombre.sort()}`)
     }
 }
 
+function add (first, second) {
+    let somme = Number(first) + Number(second);
+    
+    return somme;
+}
+
+function rtrn () {
+    saluer(prenom)
+    let result = add(prompt("Quel est le premier nombre ?"), prompt("Quel est le deuxième nombre ?"));
+
+    alert(`La somme des deux fais ${result}`);
+}
+
+function registered () {
+    alert("Les inscrits sont")
+    for (prenom of registeredList) {
+        alert(prenom)
+    }
+}
+
+function registration () {
+    let prenom = prompt("Confirmez votre prénom ?")
+    registeredList.push(prenom)
+    alert("Vous êtes bien inscrit !")
+    alert("donc")
+    registered()
+}
+
+function registre () {
+    saluer(prenom)
+
+    registered()
+
+    if (confirm("Voulez vous vous inscrire ?")) {
+        registration()
+    } else {
+        alert("Au revoir !")
+    }
+}
 
 const bouton1 = document.getElementById("exo1");
 const bouton2 = document.getElementById("exo2");
@@ -179,7 +224,10 @@ const bouton6 = document.getElementById("exo6");
 const bouton7 = document.getElementById("exo7");
 const bouton8 = document.getElementById("exo8");
 const bouton9 = document.getElementById("exo9");
-const bouton10 = document.getElementById("exo10");
+const bouton12 = document.getElementById("exo12");
+const bouton13 = document.getElementById("exo13");
+const bouton14 = document.getElementById("exo14");
+
 
 if (bouton1) {
     bouton1.addEventListener("click",identite)
@@ -216,3 +264,15 @@ if(bouton8) {
 if(bouton9) {
     bouton9.addEventListener("click",listNombre)
 };
+
+if(bouton12) {
+    bouton12.addEventListener("click",rtrn)
+}
+
+if(bouton13) {
+    bouton13.addEventListener("click",registre)
+}
+
+if(bouton14) {
+    bouton14.addEventListener("click",)
+}
