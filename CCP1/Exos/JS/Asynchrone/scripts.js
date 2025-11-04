@@ -128,8 +128,32 @@ if (exo6Btn) {
     exo6Btn.addEventListener("click", etape6)
 }
 
-async function lancerTelechargement () {
+function telechargerFichier() {
+    return new Promise((resolve, reject) => {
+        const success = Math.random() > 0.5; 
+
+        setTimeout(() => {
+            if (success) {
+                resolve("Fichier téléchargé avec succès !");
+            } else {
+                reject(new Error("Erreur de téléchargement : Connexion interrompue."));
+            }
+        }, 1000);
+    });
+}
+
+async function lancerTelechargement() {
     try {
-        
+        const resultat = await telechargerFichier();
+        alert(resultat);
+        console.log(resultat);
+    } catch (error) {
+        alert("ÉCHEC : " + error.message);
+        console.error("Erreur gérée :", error);
     }
+}
+
+const exo7Btn = document.getElementById("exo7Btn");
+if (exo7Btn) {
+    exo7Btn.addEventListener("click", lancerTelechargement);
 }
