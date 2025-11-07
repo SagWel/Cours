@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo api storage</title>
+    <style>
+        body {
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .inputContainer {
+            background-color: bisque;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 6rem;
+            width: fit-content;
+            margin: auto;
+            margin-bottom: 4rem;
+            border-radius: 0.75rem;
+            box-shadow: 0.3rem 0.5rem gray;
+            position: relative;
+        }
+
+        .inputContainer button {
+            background-color: lightcoral;
+            border-radius: 1rem;
+            border-color: burlywood;
+        }
+
+        .inputContainer button:hover {
+            background-color: rgb(240, 154, 154);
+        }
+
+        .resultContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-row: auto;
+            gap: 6rem;
+            margin: 3rem;
+            align-items: center;
+        }
+
+        .card {
+            height: fit-content;
+            width: fit-content;
+            display: inline-block;
+            position: relative;
+        }
+
+        .card button {
+            z-index: 5;
+            margin-bottom: 0.25rem;
+        }
+
+        img {
+            height: 20rem;
+            width: 15.5rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hover {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            background-color: gray;
+            background-color: rgba(128, 128, 128, 0.466);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            text-shadow: 0.125rem 0.125rem black;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            width: fit-content;
+            height: fit-content;
+            color: white;
+            position: relative;
+        }
+        
+        a:hover img {
+            z-index: 0;
+        }
+
+        .resultContainer button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputContainer" class="inputContainer">
+        <label for="recherche"> Rechercher un Film</label>
+        <input type="text" name="recherche">
+        <button type="submit" id="submitBtn">Rechercher</button>
+    </div>
+    <div id="titleContainer"></div>
+    <div id="resultContainer" class="resultContainer">
+    </div>
+    <script src="./04_exo_api_storage_Nicolas.js"></script>
+</body>
+</html>
+
