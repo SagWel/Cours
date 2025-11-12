@@ -45,14 +45,36 @@ if (submitBtn) {
         link.appendChild(hover)
         hover.appendChild(title)
 
+        const infosbtn = document.getElementById(`infosBtn${element["#TITLE"]}`)
+        if (infosbtn) {
+            infosbtn.addEventListener("click", () => {
+                const date = document.createElement("div")
+                date.innerHTML = `(${element["#YEAR"]})`
+                hover.appendChild(date)
+                fetch(`https://imdb.iamidiotareyoutoo.com/search?tt=${element["#IMDB_ID"]}`)
+                .then(res => res.json())
+                .then(data =>  {displayInfos(data.short)})
+            function displayInfos(e) {
+                console.log(e);
+                
+                const type = document.createElement("div")
+                type.innerHTML = `${e["@type"]}`
+                const description = document.createElement("p")
+                description.innerHTML = `${e["description"]}`
+                description.className = "description"
+                const trailer = document.createElement("a")
+                trailer.href = `${e["trailer"]["embedURL"]}`
+                trailer.innerHTML = `${e["trailer"]["name"]}`
+
+                hover.appendChild(type)
+                hover.appendChild(description)
+                hover.appendChild(trailer)
+
+                hover.style.zIndex = "7"
+            }
+            })
+        }
     }
-
-    query = ""
-
-    })
-
-    const storageContent = [localStorage.getItem('query'), localStorage.getItem('result')]
-    console.log(storageContent);
+})  
 }
 
-const 
