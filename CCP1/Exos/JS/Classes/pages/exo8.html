@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos Classes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4 flex-col gap-2">
+    <main class="flex items-center justify-center">
+        <div class="mt-4 bg-purple-600 text-white font-bold py-2 px-1 rounded-lg transition-colors text-center">
+            <h1 >
+                Veuillez ouvrir la console
+            </h1>
+            <h5>
+                F12 ou Ctrl + Shift + I
+            </h5>
+        </div>
+    </main>
+    <a href="../index.html">Retour à l'acceuil</a>
+    <script>
+        class Etudiant {
+            constructor (nom, age, notes) {
+                this.nom = nom
+                this.age = age
+                this.notes = notes
+            }
+
+            moyenne () {
+                let somme = 0
+
+                for (const element of this.notes){
+                    somme += element;
+                }
+
+                let result = somme / this.notes.length
+
+                return result
+            }
+        }
+
+        class Professeur {
+            constructor (nom, matiere) {
+                this.nom = nom
+                this.matiere = matiere
+            }
+        }
+
+        class Ecole {
+            constructor () {
+                this.professseurs = []
+                this.etudiants = []
+            }
+
+            ajouterEtudiant(etudiant) {
+                this.etudiants.push(etudiant)
+            }
+
+            ajouterprofesseur (professeur) {
+                this.professseurs.push(professeur)
+            }
+
+            afficherEtudiants () {
+                return this.etudiants
+            }
+
+            afficherProfesseurs () {
+                return this.professseurs
+            }
+        }
+
+        const E1 = new Etudiant ("Thomas", 12, [5, 3, 18, 15, 20])
+        const E2 = new Etudiant ("Johanna", 15, [18, 0, 20, 1, 10])
+
+        const P1 = new Professeur ("Catrique", "Mathématique")
+        const P2 = new Professeur ("Dupont", "Philosophie")
+
+        const Ec1 = new Ecole
+
+        Ec1.ajouterEtudiant(E1)
+        Ec1.ajouterEtudiant(E2)
+
+        Ec1.ajouterprofesseur(P1)
+        Ec1.ajouterprofesseur(P2)
+
+        console.log(Ec1.afficherEtudiants());
+        console.log(Ec1.afficherProfesseurs());
+
+        console.log(`${E1.nom} à une moyenne de ${E1.moyenne().toFixed(2)}/20.`);
+        console.log(`${E2.nom} à une moyenne de ${E2.moyenne().toFixed(2)}/20.`);
+    </script>
+</body>
+</html>

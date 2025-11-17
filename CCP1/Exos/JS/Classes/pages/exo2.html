@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exos Classes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <main>
-        <form id="formExo2">
-            <label for="marque">Marque de votre voiture</label>
-            <input type="text" name="marque" id="marque">
-
-            <label for="modele">Modele de votre voiture</label>
-            <input type="text" name="modele" id="modele">
-
-            <label for="kilometrage">Kilométrage de votre voiture</label>
-            <input type="text" name="kilometrage" id="kilometrage">
-
-            <button type="submit">Enregistrer informations</button>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4 flex-col gap-2">
+    <main class="bg-white p-6 rounded-xl shadow-2xl w-full max-w-md">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">Créer une nouvelle voiture</h1>
+        <form id="formExo2" class="flex flex-col gap-4">
+            <label for="marque" class="font-semibold">Marque :</label>
+            <input type="text" id="marque" required class="p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500">
+            
+            <label for="modele" class="font-semibold">Modèle :</label>
+            <input type="text" id="modele" required class="p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500">
+            
+            <label for="kilometrage" class="font-semibold">Kilométrage initial :</label>
+            <input type="number" id="kilometrage" required min="0" class="p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500">
+            
+            <button type="submit" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-lg transition-colors">
+                Ajouter la voiture
+            </button>
         </form>
+        
     </main>
+
     <a href="../index.html">Retour à l'acceuil</a>
     <script src="../JS/scripts.js"></script>
+
 </body>
 </html>
