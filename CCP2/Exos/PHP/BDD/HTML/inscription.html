@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvel Utilisateur</title>
+    <link rel="stylesheet" href="../CSS/inserer.css">
+</head>
+<body>
+    
+    <div class="card">
+        <h1>Nouvel Utilisateur</h1>
+
+        <form action="../PHP/connect.php" method="POST">
+            
+            <div class="form-group">
+                <label for="user">Nom d'utilisateur</label>
+                <input type="text" id="user" name="user" placeholder="Ex: Alice Martin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">Mot de passe</label>
+                <input type="password" id="pwd" name="pwd" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-group">
+                <label for="CP">Code Postal</label>
+                <input type="text" id="CP" name="CP" 
+                    placeholder="Ex: 75001" 
+                    pattern="[0-9]{5}" 
+                    title="5 chiffres requis" 
+                    required>
+                <div class="hint">Format attendu : 5 chiffres (ex: 33000)</div>
+            </div>
+
+            <button type="submit" class="btn-submit">Créer le profil</button>
+            
+            <a href="../PHP/login.php" class="btn-back">Retour à la connexion</a>
+        </form>
+    </div>
+
+</body>
+</html>

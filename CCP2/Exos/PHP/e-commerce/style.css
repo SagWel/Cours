@@ -1,0 +1,289 @@
+/* 1. Variables : Facile à modifier pour les élèves */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #64748b;
+    --success-color: #22c55e;
+    --danger-color: #ef4444;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+}
+
+/* 2. Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    
+    /* SOLUTION : On pousse tout le contenu vers le bas */
+    /* La navbar fait 70px de haut, on met 90px ou 100px pour laisser de l'air */
+    padding-top: 100px; 
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Optionnel : Si vous avez des écrans très petits, 
+   vous pouvez ajuster ce padding dans la media query */
+@media (max-width: 768px) {
+    body {
+        padding-top: 90px;
+    }
+}
+/* 3. Layout Responsive */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* 4. Formulaires Modernes */
+form {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* 5. Tableaux Responsives */
+.table-wrapper {
+    overflow-x: auto; /* Permet le scroll horizontal sur mobile */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--bg-color);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* 6. Alertes PHP */
+.alert {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.alert-success { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.alert-error { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+/* --- NAVBAR VERSION FINALE & RESPONSIVE --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--card-bg);
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espace entre le logo et le menu */
+    padding: 0 5%;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Menu horizontal pour PC */
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Bouton Hamburger caché par défaut */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* --- ADAPTATION MOBILE (Tablettes et Smartphones) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Apparaît sur mobile */
+    }
+
+    .navbar-nav {
+        display: none; /* Disparaît sur mobile par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Juste en dessous de la navbar */
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg);
+        padding: 20px;
+        border-bottom: 2px solid var(--border-color);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Quand on clique sur le bouton, on ajoute cette classe via JS */
+    .navbar-nav.active {
+        display: flex;
+    }
+}
+/* apparence du bouton Details_commande */
+.btn-detail {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+
+.btn-detail:hover {
+    background-color: #3b82f6; /* Une nuance plus claire */
+    color: white;
+}
+
+/* gestion de lm'impression en media query responsive
+/* Style du bouton imprimer sur l'écran */
+.btn-print {
+    background-color: #10b981; /* Vert */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn-print:hover {
+    background-color: #059669;
+}
+
+/* --- LOGIQUE D'IMPRESSION --- */
+@media print {
+    /* On cache tout ce qui ne sert à rien sur papier */
+    .navbar, .btn-print, .btn-detail, nav, footer {
+        display: none !important;
+    }
+
+    /* On réinitialise les marges du body pour le papier */
+    body {
+        padding-top: 0 !important;
+        background-color: white !important;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* On force l'affichage des couleurs de fond si besoin */
+    tr {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
