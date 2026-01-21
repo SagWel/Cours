@@ -1,0 +1,108 @@
+:root {
+    --primary: #4a90e2;
+    --dark: #333;
+    --light: #f4f7f6;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light);
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 50px;
+}
+
+h1 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Style du formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; /* Évite le zoom auto sur iPhone */
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* Liens */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-home {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.role {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 10px;
+    border: solid 2px rgb(109, 189, 63);
+    border-radius: 15px;
+    margin-top: 10px;
+    color: rgb(109, 189, 63);
+    font-size: 14px;
+    font-weight: 500;
+}
