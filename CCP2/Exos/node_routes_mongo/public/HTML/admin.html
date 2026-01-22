@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <h1>Liste des messages</h1>
+
+    <div class="container">
+        <form method="post">
+            <label for="name">Nom</label>
+            <input id="name" name="name" type="text">
+
+            <label for="topic">Sujet</label>
+            <input type="text" name="topic" id="topic">
+
+            <label for="content">Message</label>
+            <textarea id="content" name="content" type="text"></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <br>
+        <hr>
+
+        <div>
+            <table>
+                <thead>
+                    <td>Date</td>
+                    <td>Sujet</td>
+                    <td>Message</td>
+                    <td>Envoyé par</td>
+                    <td>Actions</td>
+                </thead>
+                <tbody id="listeContainer"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../JS/scripts.js"></script>
+</body>
+</html>

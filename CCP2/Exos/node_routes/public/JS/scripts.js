@@ -1,3 +1,4 @@
+// script for login page
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
@@ -25,6 +26,7 @@ if (loginForm) {
   });
 }
 
+// script for user page
 if (
   globalThis.location.pathname.includes("/users/") &&
   !globalThis.location.pathname.includes("/api/")
@@ -50,6 +52,7 @@ if (
     });
 }
 
+// script for contact page
 if (globalThis.location.pathname.includes("/contact/")) {
   const segments = globalThis.location.pathname.split("/");
   const userId = segments.at(-1);
