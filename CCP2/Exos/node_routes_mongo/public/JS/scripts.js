@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
@@ -134,6 +136,37 @@ if (globalThis.location.pathname.endsWith("/admin")) {
         }
       } catch (err) {
         console.error("Erreur:", err);
+      }
+    }
+  });
+}
+
+if (globalThis.location.pathname.includes("/edit/")) {
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest('button[type="submit"]');
+
+    if (btn) {
+      e.preventDefault();
+
+      const url = globalThis.location.pathname;
+      const topic = document.getElementById("topic").value;
+      const content = document.getElementById("content").value;
+
+      try {
+        const response = await fetch(url, {
+          method: "PUT",
+          body: JSON.stringify({ topic, content }),
+        });
+
+        if (!reponse.ok) throw new Error("Erreur lors de la modification");
+
+        const data = await response.json();
+        console.log(data.message);
+
+        globalThis.location.href = "/admin";
+      } catch (err) {
+        console.error("Erreur", err);
+        alert("Erreur lors de la mise à jour !");
       }
     }
   });

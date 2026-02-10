@@ -38,6 +38,7 @@ const utilisateurs = [
   { id: 4, name: "Sophie Martin", role: "Apprenant", email: "sophie@test.com" },
 ];
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -166,20 +167,25 @@ app.get("/admin/edit/:id", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/HTML/modifier.html"));
 });
 
-app.post("/admin/edit/:id", async (req, res) => {
-  const idmsg = req.params.id;
-  const { topic, content } = req.body;
+app.put("/admin/edit/:id", async (req, res) => {
+  try {
+    const idmsg = req.params.id;
+    const { topic, content } = req.body;
 
-  if (topic != "" && content != "") {
-    await Contact.findByIdAndUpdate(idmsg, { topic: topic, content: content });
-    res.redirect("/admin");
-  } else if (topic != "") {
-    await Contact.findByIdAndUpdate(idmsg, { topic: topic });
-    res.redirect("/admin");
-  } else if (content != "") {
-    await Contact.findByIdAndUpdate(idmsg, { content: content });
-    res.redirect("/admin");
-  }
+    if (topic != "" && content != "") {
+      await Contact.findByIdAndUpdate(idmsg, {
+        topic: topic,
+        content: content,
+      });
+      res.json({ message: "Modifications réussies !" });
+    } else if (topic != "") {
+      await Contact.findByIdAndUpdate(idmsg, { topic: topic });
+      res.json({ message: "Modification du sujet réussie !" });
+    } else if (content != "") {
+      await Contact.findByIdAndUpdate(idmsg, { content: content });
+      res.json({ message: "Modification du message réussie !" });
+    }
+  } catch {}
 });
 
 app.listen(port, () => {
