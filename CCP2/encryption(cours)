@@ -1,0 +1,122 @@
+import crypto from 'crypto';
+
+// Constantes cryptographiques
+const IV_LENGTH = 12; // Taille du vecteur d'initialisation en bytes (96 bits, standard GCM)
+const AUTH_TAG_LENGTH = 16; // Taille du tag d'authentification GCM en bytes
+
+interface StoredKey {
+  key: Buffer;
+  expiresAt: number;
+}
+
+// Stockage en mémoire des clés de chiffrement, indexées par userId
+const keyStore = new Map<number, StoredKey>();
+
+const KEY_TTL_MS = 30 * 60 * 1000; // Durée de vie d'une clé en mémoire : 30 minutes
+
+/**
+ * Hash le mot de passe maître avec SHA-256 pour obtenir une clé AES de 256 bits,
+ * puis la stocke en mémoire avec un TTL de 30 min.
+ * Appelée au login pour permettre le chiffrement/déchiffrement des entrées durant la session.
+ * @param userId - L'identifiant de l'utilisateur
+ * @param masterPassword - Le mot de passe maître en clair
+ */
+export function storeUserKey(userId: number, masterPassword: string): void {
+  const key = crypto.createHash('sha256').update(masterPassword).digest();
+  keyStore.set(userId, {
+    key,
+    expiresAt: Date.now() + KEY_TTL_MS,
+  });
+}
+
+/**
+ * Récupère la clé de chiffrement d'un utilisateur depuis le store en mémoire.
+ * Retourne null si la clé n'existe pas ou a expiré (TTL dépassé).
+ * @param userId - L'identifiant de l'utilisateur
+ * @returns La clé (Buffer 32 bytes) ou null si absente/expirée
+ */
+export function getUserKey(userId: number): Buffer | null {
+  const stored = keyStore.get(userId);
+  if (!stored) return null;
+  if (Date.now() > stored.expiresAt) {
+    keyStore.delete(userId);
+    return null;
+  }
+  return stored.key;
+}
+
+/**
+ * Supprime la clé d'un utilisateur du store en mémoire.
+ * Appelée au logout pour invalider immédiatement la session crypto.
+ * @param userId - L'identifiant de l'utilisateur
+ */
+export function removeUserKey(userId: number): void {
+  keyStore.delete(userId);
+}
+
+/**
+ * Chiffre un mot de passe en clair avec AES-256-GCM.
+ * Génère un vecteur d'initialisation aléatoire pour chaque entrée.
+ * Le tag d'authentification GCM (16 bytes) est concaténé à la fin du texte chiffré.
+ * @param plaintext - Le mot de passe en clair à chiffrer
+ * @param masterKey - La clé de chiffrement (Buffer 32 bytes issu de SHA-256)
+ * @returns Un objet contenant le texte chiffré et le vecteur d'initialisation en hexadécimal
+ */
+export function encryptPassword(
+  plaintext: string,
+  masterKey: Buffer
+): { encrypted: string; initialisation_vector: string } {
+  // Génération d'un IV aléatoire unique pour cette entrée
+  const initialisation_vector = crypto.randomBytes(IV_LENGTH);
+
+  const cipher = crypto.createCipheriv('aes-256-gcm', masterKey, initialisation_vector, {
+    authTagLength: AUTH_TAG_LENGTH,
+  });
+
+  const encrypted = Buffer.concat([
+    cipher.update(plaintext, 'utf-8'),
+    cipher.final(),
+  ]);
+
+  // Concaténation du tag d'authentification au texte chiffré
+  const authTag = cipher.getAuthTag();
+  const encryptedWithTag = Buffer.concat([encrypted, authTag]);
+
+  return {
+    encrypted: encryptedWithTag.toString('hex'),
+    initialisation_vector: initialisation_vector.toString('hex'),
+  };
+}
+
+/**
+ * Déchiffre un mot de passe chiffré avec AES-256-GCM.
+ * Sépare le tag d'authentification du texte chiffré puis déchiffre en vérifiant l'intégrité.
+ * @param encryptedHex - Le texte chiffré + tag d'authentification en hexadécimal
+ * @param initialisationVectorHex - Le vecteur d'initialisation en hexadécimal
+ * @param masterKey - La clé de chiffrement (Buffer 32 bytes issu de SHA-256)
+ * @returns Le mot de passe en clair
+ */
+export function decryptPassword(
+  encryptedHex: string,
+  initialisationVectorHex: string,
+  masterKey: Buffer
+): string {
+  const encryptedWithTag = Buffer.from(encryptedHex, 'hex');
+  const initialisation_vector = Buffer.from(initialisationVectorHex, 'hex');
+
+  // Séparation du texte chiffré et du tag d'authentification
+  const authTag = encryptedWithTag.subarray(encryptedWithTag.length - AUTH_TAG_LENGTH);
+  const encrypted = encryptedWithTag.subarray(0, encryptedWithTag.length - AUTH_TAG_LENGTH);
+
+  const decipher = crypto.createDecipheriv('aes-256-gcm', masterKey, initialisation_vector, {
+    authTagLength: AUTH_TAG_LENGTH,
+  });
+  decipher.setAuthTag(authTag);
+
+  const decrypted = Buffer.concat([
+    decipher.update(encrypted),
+    decipher.final(),
+  ]);
+
+  return decrypted.toString('utf-8');
+}
